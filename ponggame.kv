@@ -1,0 +1,61 @@
+#: kivy 2.0.0
+
+
+<PongGame>:
+    ball: pong_ball
+    racket1: Racket_1
+    racket2: Racket_2
+    canvas:
+        Rectangle:
+            pos: self.center_x - dp(5), 0
+            size: dp(10), self.height
+
+    Label:
+        font_size: sp(70)
+        center_x: root.width/4
+        top: root.top - sp(50)
+        text: '0'
+
+    Label:
+        font_size: sp(70)
+        center_x: root.width*3/4
+        top: root.top - sp(50)
+        text: '0'
+
+
+    PongBall:
+        id: pong_ball
+        center:self.parent.center
+
+    Racket_1:
+        id: Racket_1
+        pos: self.parent.width/8, self.parent.height/2
+
+    Racket_2:
+        id: Racket_2
+        pos: self.parent.width*7/8, self.parent.height/2
+
+
+
+
+<PongBall>:
+    size: dp(50), dp(50)
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
+<Racket_1>:
+    size: dp(5), dp(35)
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Racket_2>:
+    size: dp(5), dp(35)
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
